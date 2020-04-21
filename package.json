@@ -1,0 +1,25 @@
+{
+  "name": "investment",
+  "version": "1.0.0",
+  "description": "Mono repo for investment web app (?)",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "lerna run bootstrap",
+    "build": "lerna run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lerna": "lerna"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/David-the-zen/investment.git"
+  },
+  "author": "<davids email>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/David-the-zen/investment/issues"
+  },
+  "homepage": "https://github.com/David-the-zen/investment#readme",
+  "dependencies": {
+    "lerna": "^3.20.2"
+  }
+}
