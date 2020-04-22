@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'investing-watchlist';
+  title:string = 'Investing watchlist';
+  motto:string;
+
+  constructor() {
+    this.currentMotto('It is a good time to invest');
+  }
+
+  currentMotto(motto:string):void {
+    this.motto = motto;
+    console.log(motto);
+  }
 }
