@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Watchlist } from 'src/app/models/Watchlist';
+import { i18nMetaToDocStmt } from '@angular/compiler/src/render3/view/i18n/meta';
 
 @Component({
   selector: 'app-watchlist-item',
@@ -22,6 +23,14 @@ export class WatchlistItemComponent implements OnInit {
     }
 
     return classes;
+  }
+
+  onToggle(watchlist) {
+    watchlist.completed = !watchlist.completed
+  }
+
+  onDelete(watchlsit) {
+    console.log('delete');
   }
 
 }

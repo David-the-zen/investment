@@ -1,7 +1,7 @@
 <div [ngClass]="setClasses()">
     <p>
-        <input type="checkbox" />
+        <input (change)="onToggle(watchlist)" type="checkbox" />
         {{watchlist.company}}
-        <button class="del">x</button>
+        <button (click)="onDelete(watchlist)" class="del">x</button>
     </p>
 </div>
