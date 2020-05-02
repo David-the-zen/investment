@@ -13,7 +13,9 @@ export class WatchListComponent implements OnInit {
   constructor(private watchlistService:WatchListService) { }
 
   ngOnInit() {
-    this.watchlists = this.watchlistService.getWatchlist();
+    this.watchlistService.getWatchlist().subscribe(watchlists => {
+      this.watchlists = watchlists;
+    });
   }
 
 }

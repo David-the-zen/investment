@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Watchlist } from 'src/app/models/Watchlist';
 import { i18nMetaToDocStmt } from '@angular/compiler/src/render3/view/i18n/meta';
+import { WatchListService } from '../../services/watch-list.service';
 
 @Component({
   selector: 'app-watchlist-item',
@@ -10,7 +11,7 @@ import { i18nMetaToDocStmt } from '@angular/compiler/src/render3/view/i18n/meta'
 export class WatchlistItemComponent implements OnInit {
   @Input () watchlist: Watchlist;
 
-  constructor() { }
+  constructor(private watchlistService:WatchListService) { }
 
   ngOnInit(): void {
   }
@@ -26,10 +27,14 @@ export class WatchlistItemComponent implements OnInit {
   }
 
   onToggle(watchlist) {
+    //Toggle in UI
     watchlist.completed = !watchlist.completed
+    //Toggle on server
+    this.watchlistService.toggleCompleted(watchlist).subscribe(watchlist =>
+      console.log(watchlist));
   }
 
-  onDelete(watchlsit) {
+  onDelete(watchlist) {
     console.log('delete');
   }
 
