@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Watchlist } from 'src/app/models/Watchlist';
 import { i18nMetaToDocStmt } from '@angular/compiler/src/render3/view/i18n/meta';
 import { WatchListService } from '../../services/watch-list.service';
@@ -9,7 +9,8 @@ import { WatchListService } from '../../services/watch-list.service';
   styleUrls: ['./watchlist-item.component.scss']
 })
 export class WatchlistItemComponent implements OnInit {
-  @Input () watchlist: Watchlist;
+  @Input() watchlist: Watchlist;
+  @Output()deleteWatchlist: EventEmitter<Watchlist> = new EventEmitter();
 
   constructor(private watchlistService:WatchListService) { }
 
@@ -35,7 +36,7 @@ export class WatchlistItemComponent implements OnInit {
   }
 
   onDelete(watchlist) {
-    console.log('delete');
+    this.deleteWatchlist.emit(watchlist)
   }
 
 }

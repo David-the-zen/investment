@@ -18,4 +18,17 @@ export class WatchListComponent implements OnInit {
     });
   }
 
+  deleteWatchlist(watchlist:Watchlist) {
+    //Remove from UI
+    this.watchlists = this.watchlists.filter(t => t.stockTicker !== watchlist.stockTicker);
+    //REmove from server
+    this.watchlistService.deleteWatchlist(watchlist).subscribe();
+  }
+
+  addWatchlist(watchlist:Watchlist) {
+    this.watchlistService.addWatchlist(watchlist).subscribe(watchlist => {
+      this.watchlists.push(watchlist);
+    })
+  }
+
 }

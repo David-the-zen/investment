@@ -1,2 +1,7 @@
-<app-watchlist-item *ngFor="let watchlist of watchlists" [watchlist]="watchlist">
+<app-add-watchlist (addWatchlist)="addWatchlist($event)"></app-add-watchlist>
+<app-watchlist-item
+  *ngFor="let watchlist of watchlists"
+   [watchlist]="watchlist"
+   (deleteWatchlist)="deleteWatchlist($event)"
+   >
 </app-watchlist-item>
