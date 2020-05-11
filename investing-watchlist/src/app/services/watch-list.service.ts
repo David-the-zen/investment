@@ -14,8 +14,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class WatchListService {
-  watchlistsUrl:string = 'http://localhost:3000/stocks';
-  watchlistLimit = '?_limit=5';
+  watchlistsUrl:string = 'http://localhost:3000/id';
+  //watchlistLimit = '?_limit=5';
 
   constructor(private http:HttpClient) { }
 

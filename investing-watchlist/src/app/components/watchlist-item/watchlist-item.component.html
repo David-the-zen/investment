@@ -2,6 +2,8 @@
     <p>
         <input (change)="onToggle(watchlist)" type="checkbox" />
         {{watchlist.company}}
+        {{watchlist.stockTicker}}
+        {{watchlist.price}}
         <button (click)="onDelete(watchlist)" class="del">x</button>
     </p>
 </div>
